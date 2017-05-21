@@ -1,0 +1,35 @@
+
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    {{title}}
+  </div>
+
+  <div class='panel-body'>
+    <button class='btn btn-primary'
+            (click)='refreshData()'>
+      Refresh
+    </button>
+    <div class='row'>
+      <div class='col-md-4'>
+        <input type='text' [(ngModel)]='numberOfRecords' />
+      </div>
+    </div>
+
+    <div class='table-responsive'>
+      <table class='table'>
+        <thead>
+          <th>Provider</th>
+          <th>Tomatoes</th>
+          <th>Sale</th>
+        </thead>
+        <tbody>
+        <tr *ngFor='let tomato of tomatoes'>
+          <td>{{ tomato.provider}}</td>
+          <td>{{ tomato.tomatoes}}</td>
+          <td>{{ tomato.timestamp | date: 'dd.MM.yyyy'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
